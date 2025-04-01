@@ -1,21 +1,15 @@
-import { SafeAreaView, StyleSheet, Text } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native';
 
-import Scan from './assets/icons/scan.svg';
-import Icon from './components/Icon';
+import { MainNavigator } from './navigators';
+import { navigationRef } from './utils/navigator';
 
 const App = () => {
   return (
-    <SafeAreaView style={{ backgroundColor: '#ff0000', flex: 1 }}>
-      <Text>App</Text>
-      <Icon
-        SVGComponent={Scan}
-        size={32}
-        color="#FFD700"
-      />
-    </SafeAreaView>
-  )
-}
+    <NavigationContainer ref={navigationRef}>
+      <MainNavigator />
+    </NavigationContainer>
+  );
+};
 
-export default App
+export default App;
 
-const styles = StyleSheet.create({})
